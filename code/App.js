@@ -15,9 +15,9 @@
  * Consistent Hashing
  * Zero-configuration
  * Tree-Shaking -> Removing Unwanted
- * 
- * 
- * 
+ *
+ *
+ *
  * Transitive Dependencies
  */
 
@@ -25,35 +25,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement(
-    "h1",
-    {
-      id: "title",
-    },
-    "Heading 1 from parcel"
-  );
-  
-  const heading2 = React.createElement(
-    "h2",
-    {
-      id: "title",
-    },
-    "Heading 2"
-  );
-  
-  const container = React.createElement(
-    "div",
-    {
-      id: "container",
-    },
-    [heading, heading2]
-  );
-  console.log(container);
-  
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  
-  //passing a react element inside the root
-  
-  //async defer
-  root.render(container);
-  
+
+const Title = () => {
+  return <h1 id="heading">Aayush Sharma</h1>
+}
+
+// component composition
+const HeaderComponent = () => {
+ return(
+  <div>
+    <Title />
+    <h1>This is functional Component</h1>
+    <h2>This is h2 Tag</h2>
+  </div>
+ )
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+//passing a react element inside the root
+
+//async defer
+root.render(<HeaderComponent />);
